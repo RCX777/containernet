@@ -128,7 +128,7 @@ KERNEL_IMAGE_OLD=linux-image-2.6.26-33-generic
 
 DRIVERS_DIR=/lib/modules/${KERNEL_NAME}/kernel/drivers/net
 
-OVS_RELEASE=1.4.0
+OVS_RELEASE=3.5.0
 OVS_PACKAGE_LOC=https://github.com/downloads/mininet/mininet
 OVS_BUILDSUFFIX=-ignore # was -2
 OVS_PACKAGE_NAME=ovs-$OVS_RELEASE-core-$DIST_LC-$RELEASE-$ARCH$OVS_BUILDSUFFIX.tar
