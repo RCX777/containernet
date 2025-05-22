@@ -1,3 +1,8 @@
+util/install-nested-container.sh
+
+.git
+.dockerignore
+
 *.pyc
 **/*.pyc
 **/__pycache__

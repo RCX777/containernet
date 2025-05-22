@@ -458,33 +458,6 @@ function ovs {
     fi
 }
 
-# Install DPDK
-function dpdk {
-    echo "Installing dependencies..."
-    apt update -y && apt install -y \
-        wget \
-        xz-utils \
-        meson
-
-    echo "Downloading DPDK sources..."
-    mkdir -p /usr/src
-    cd /usr/src/
-    wget https://fast.dpdk.org/rel/dpdk-24.11.1.tar.xz
-    tar xf dpdk-24.11.1.tar.xz
-    export DPDK_DIR=/usr/src/dpdk-stable-24.11.1
-    cd $DPDK_DIR
-
-    echo "Building DPDK..."
-    export DPDK_BUILD=$DPDK_DIR/build
-    meson setup build
-    ninja -C build
-    sudo ninja -C build install
-    sudo ldconfig
-}
-
-# Install OVS-DPDK
-
-
 function remove_ovs {
     pkgs=`dpkg --get-selections | grep openvswitch | awk '{ print $1;}'`
     echo "Removing existing Open vSwitch packages:"
